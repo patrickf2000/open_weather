@@ -48,24 +48,44 @@ function loadFuture() {
 
         for (var i = 1; i<list.length; i++) {
             var date = loadDate(list[i].dt_txt);
-            if (date != lastDate && loadTime(list[i].dt_txt) == "12:00:00") {
+            if (date != lastDate) {
                 lastDate = date;
                 indexes.push(i);
             }
         }
-
-        var index = 1;
-
+        
+       	var index = 1;
+        
         for (var i = 0; i<indexes.length; i++) {
-            var weather = list[indexes[i]];
-            var title = weather.dt_txt;
+        	var next = list.length;
+        	if (i+1 < indexes.length) {
+        		next = indexes[i+1];
+        	}
+        	console.log("Current: "+indexes[i]);
+        	console.log("Next: "+next);
+        	console.log("");
+        	
+        	var weather = list[indexes[i]];
+        	var lastTemp = weather.main.temp_max;
+            
+        	for (var j = i; j<next; j++) {
+        		var weather_temp = list[j];
+        		var t = weather_temp.main.temp_max;
+        		
+        		if (parseInt(t,10) > parseInt(lastTemp,10)) {
+        			weather = list[j];
+        			lastTemp = t;
+        		}
+        	}
+        	
+        	var title = weather.dt_txt;
             var description = weather.weather[0].main;
             var temp = weather.main.temp_max;
-
+            
             document.getElementById("date_day"+index).innerHTML = loadDate(title);
             document.getElementById("img_day"+index).src = getIconSrc(description);
             document.getElementById("temp_day"+index).innerHTML = temp;
-
+            
             index++;
         }
     }
@@ -104,19 +124,3 @@ function loadDate(date) {
     return ret;
 }
 
-function loadTime(date) {
-    var ret = "";
-    var found = false;
-
-    for (var i = 0; i<date.length; i++) {
-        if (date[i] == ' ') {
-            found = true;
-        } else {
-            if (found) {
-                ret += date[i];
-            }
-        }
-    }
-
-    return ret;
-}
