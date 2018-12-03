@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Weather!!</title>
+        <script src="weather.js"></script>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="border">
+            <header>
+                <h3>Weather!</h3>
+            </header>
+            <main>
+                <div id="weather_in">
+                    <p>Enter your zipcode: </p>
+                    <input id="zip" type="text">
+                    <button onclick="loadWeather()">Check the Weather</button>
+                </div>
+            
+                <div id="weather_output">
+                    <div id="half1">
+                        <img src="" id="weather_icon">
+                    </div>
+                    <div id="half2">
+                        <p id="city"></p>
+                        <p id="current_conditions"></p>
+                    </div>
+                </div>
+
+                <div id="extended_output">
+                    <div id="day1">
+                        <p id="date_day1"></p>
+                        <img id="img_day1" class-"small_icon">
+                        <p id="temp_day1"></p>
+                    </div>
+
+                    <div id="day2">
+                        <p id="date_day2"></p>
+                        <img id="img_day2" class-"small_icon">
+                        <p id="temp_day2"></p>
+                    </div>
+
+                    <div id="day3">
+                        <p id="date_day3"></p>
+                        <img id="img_day3" class-"small_icon">
+                        <p id="temp_day3"></p>  
+                    </div>
+
+                    <div id="day4">
+                         <p id="date_day4"></p>
+                         <img id="img_day4" class-"small_icon">
+                         <p id="temp_day4"></p>
+                    </div>
+
+                    <div id="day5">
+                        <p id="date_day5"></p>
+                        <img id="img_day5" class-"small_icon">
+                        <p id="temp_day5"></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+body {
+    margin:0;
+    padding:0;
+    background-color:#0066ff;
+}
+
+#border {
+    padding:0;
+    margin-top:0;
+    margin-left:50px;
+    margin-right:50px;
+    background-color:white;
+    height:95vh;
+}
+
+header {
+    background-color:#d0f3ff;
+    padding:10px;
+}
+
+header h3 {
+    margin-left:30px;
+    font-size:25px;
+}
+
+#weather_in {
+    padding:5px;
+}
+
+#weather_in p {
+    display:inline;
+}
+
+#weather_output {
+    padding:20px;
+}
+
+#half1 {
+    float:left;
+    width:300px;
+    height:300px;
+}
+
+#weather_icon {
+    width:200px;
+    height:200px;
+}
+
+#extended_output {
+    clear:both;
+}
+
+#extended_output div {
+    display:inline-block;
+    border-style:solid;
+    border-width:2px;
+    border-color:black;
+}
+
+.small_icon {
+    width:75px;
+    height:75px;
+}
