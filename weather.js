@@ -72,12 +72,15 @@ function loadFuture() {
 }
 
 function getIconSrc(condition) {
+	console.log("Condition: "+condition);
     var icon = "sun.svg";
 
     if (condition == "Rain") {
         icon = "rain.svg";
     } else if (condition == "Snow") {
         icon = "snowing.svg";
+  	} else if (condition == "Clouds" || condition == "Mist") {
+  		icon = "cloudy.svg";
     } else {
         icon = "sun.svg";
     }
