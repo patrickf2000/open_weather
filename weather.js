@@ -1,7 +1,16 @@
 $(document).ready(function() {
 	$("#weather_output").hide();
 	$("#extended_output").hide();
+	
+	$("#zip").keydown(function(e) {
+		if (e.which == 13) {
+			e.preventDefault();
+			loadWeather();
+		}
+	});
 });
+
+
 
 function loadWeather() {
     loadCurrent();
