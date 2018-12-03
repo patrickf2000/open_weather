@@ -1,6 +1,17 @@
+$(document).ready(function() {
+	$("#weather_output").hide();
+	$("#extended_output").hide();
+});
+
 function loadWeather() {
     loadCurrent();
     loadFuture();
+    showElements();
+}
+
+function showElements() {
+	$("#weather_output").show();
+	$("#extended_output").show();
 }
 
 function loadCurrent() {
