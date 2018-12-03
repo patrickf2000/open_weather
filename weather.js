@@ -18,6 +18,8 @@ function loadCurrent() {
         current += "Temperature: " + data.main.temp + "<br />";
         current += "High: " + data.main.temp_max + "<br />";
         current += "Low: " + data.main.temp_min + "<br />";
+        current += "Humidity: " + data.main.humidity + "%<br />";
+        current += "Wind Speed: " + data.wind.speed + " mph<br />";
 
         document.getElementById("current_conditions").innerHTML = current;
 
