@@ -95,16 +95,16 @@ function loadFuture() {
 
 function getIconSrc(condition) {
 	console.log("Condition: "+condition);
-    var icon = "sun.svg";
+    var icon = "icons/sun.svg";
 
     if (condition == "Rain") {
-        icon = "rain.svg";
+        icon = "icons/rain.svg";
     } else if (condition == "Snow") {
-        icon = "snowing.svg";
+        icon = "icons/snowing.svg";
   	} else if (condition == "Clouds" || condition == "Mist") {
-  		icon = "cloudy.svg";
+  		icon = "icons/cloudy.svg";
     } else {
-        icon = "sun.svg";
+        icon = "icons/sun.svg";
     }
 
     return icon;
