@@ -10,7 +10,15 @@ $(document).ready(function() {
 	});
 });
 
-
+setInterval(function() {
+	var element = $(".day_block").each(function(i,obj) {
+		if ($(this).is(":hover")) {
+			$("#half2").show();
+		} else {
+			$("#half2").hide();
+		}
+	});
+}, 200);
 
 function loadWeather() {
     loadCurrent();
@@ -21,6 +29,7 @@ function loadWeather() {
 function showElements() {
 	$("#weather_output").show();
 	$("#extended_output").show();
+	$("#half2").hide();
 }
 
 function loadCurrent() {
@@ -81,9 +90,6 @@ function loadFuture() {
         	if (i+1 < indexes.length) {
         		next = indexes[i+1];
         	}
-        	console.log("Current: "+indexes[i]);
-        	console.log("Next: "+next);
-        	console.log("");
         	
         	var weather = list[indexes[i]];
         	var lastTemp = weather.main.temp_max;
